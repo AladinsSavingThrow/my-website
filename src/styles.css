@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, sans-serif;
+    max-width: 720px;
+    margin:  40px auto;
+    padding: 0 20px;
+    line-height: 1.6;
+    color: #222;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-bottom: 40px;
+}
+
+a {
+    color: #2457a7;
+}
+
+h1, h2 {
+    line-height: 1.2;
+}
+@media (max-width: 600px) {
+    body {
+        margin: 24px auto;
+        padding: 0 16px;
+    }
+    nav {
+        gap: 12px;
+        margin-bottom: 28px;
+    }
+}
