@@ -1,9 +1,23 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import { getCollection } from "astro:content";
+
+const posts = await getCollection("posts");
 ---
 
-<MainLayout title ="Writing - Ikenna">
-   <h1>Writing</h1>
+<MainLayout title="Writing - Ikenna">
+<h1>Writing</h1>
+<p>This is where you find my writing.</p>
 
-   <p>This is where you find my writing</p>
+{posts.map((post) => (
+<article>
+<h2>
+<a href={`/writing/${post.id}/`}>{post.data.title}</a>
+</h2>
+{post.data.publishedDate && (
+<p>{post.data.publishedDate}</p>
+)}
+</article>
+))}
 </MainLayout>
+
